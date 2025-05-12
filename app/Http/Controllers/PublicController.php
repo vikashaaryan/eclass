@@ -17,8 +17,8 @@ class PublicController extends Controller
         if($req->isMethod("post")){
             $data = $req->validate([
                 "name" => "required",
-                "contact" => "required",
-                "email" => "required|email",
+                "contact" => "required|unique:users",
+                "email" => "required|email|unique:users",
                 "education" => "string|nullable",
                 "password" => "required|string",
             ]);
@@ -39,6 +39,9 @@ class PublicController extends Controller
                 "password" => "required",
             ]);
             if(Auth::attempt($data)){
+                if(Auth::user()->isAdmin){
+                    return redirect()->route("admin.dashboard");
+                }
                return redirect()->route("student.dashboard");
             }
             else{

@@ -1,52 +1,64 @@
 @extends('landing.publiclayout')
 
 @section('title')
-    Student Login
+    Student Login | Aimers
 @endsection
 
 @section('content')
-    <div class="px-6 py-12 bg-white">
-        <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12">
-            <div class="lg:w-5/12 flex flex-col justify-center">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-6">
-                    Welcome Back to <span class="text-blue-700">Aimers</span>
-                </h2>
-                <p class="text-lg text-gray-600">
-                    Access your personalized dashboard, course materials, and track your progress. Login now to continue your journey with us.
-                </p>
-            </div>
-
-            <div class="lg:w-7/12">
-                <div class="border border-gray-200 p-6 flex gap-5 flex-col rounded shadow">
-                    <h2 class="text-center text-2xl font-bold">Student Login</h2>
-                    <form action="" method="POST">
-                        @csrf
-                        <div class="flex flex-col gap-2">
-                            <label for="">Email</label>
-                            <input type="email" name="email" value="{{ old('email') }}"
-                                class="bg-gray-200 rounded px-2 py-1">
-                            @error('email')
-                                <p class="text-xs text-red-400 font-semibold">{{ $message }}</p>
-                            @enderror
+    <div class="min-h-screen bg-gradient-to-br from--50  py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="lg:w-1/2 max-w-lg">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        Welcome back to <span class="text-blue-600">Aimers</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Sign in to access your personalized dashboard, course materials, and track your learning progress.
+                        Continue your educational journey with us.
+                    </p>
+                </div>
+                <div class="lg:w-1/2 w-full max-w-md">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl font-bold text-gray-900">Student Login</h2>
+                            <p class="text-gray-500 mt-2">Enter your credentials to access your account</p>
                         </div>
-
-                        <div class="flex flex-col gap-2 mt-4">
-                            <label for="">Password</label>
-                            <input type="password" name="password"
-                                class="bg-gray-200 rounded px-2 py-1">
-                            @error('password')
-                                <p class="text-xs text-red-400 font-semibold">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div class="mt-4">
-                            <input type="submit"
-                                class="py-1 bg-blue-500 text-white font-semibold w-full rounded" value="Login">
-                        </div>
-                        <div class="text-sm text-center mt-3 text-gray-500">
-                            Don't have an account? <a href="{{ route('public.apply') }}" class="text-blue-600 font-semibold">Apply Now</a>
-                        </div>
-                    </form>
+                        <form action="" method="POST" class="space-y-6">
+                            @csrf
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                    Address</label>
+                                <input type="email" id="email" name="email" value="{{ old('email') }}"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                                    placeholder="your@email.com">
+                                @error('email')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                                </div>
+                                <input type="password" id="password" name="password"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+                                    placeholder="••••••••">
+                                @error('password')
+                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <button type="submit"
+                                class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200">
+                                Sign In
+                            </button>
+                            <div class="text-center text-sm text-gray-500">
+                                Don't have an account?
+                                <a href="{{ route('public.apply') }}"
+                                    class="font-semibold text-blue-600 hover:text-blue-500 ml-1">
+                                    Apply Now
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

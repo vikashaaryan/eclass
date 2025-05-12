@@ -93,6 +93,9 @@
                             class="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded transition duration-200">
                             Apply Now
                         </button>
+                        <div class="text-sm text-center mt-3 text-gray-500">
+                            have an account? <a href="{{ route('login') }}" class="text-blue-600 font-semibold">login Now</a>
+                        </div>
                     </div>
                 </form>
             </div>
