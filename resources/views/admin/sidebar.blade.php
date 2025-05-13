@@ -27,7 +27,7 @@
             </svg>
             <span>Manage Admissions</span>
         </a>
-        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded hover:bg-blue-100 transition">
+        <a href="{{route("admin.manageStudent")}}" class="flex items-center space-x-3 px-3 py-2 rounded hover:bg-blue-100 transition">
             <svg class="w-5 h-5 " fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M5.121 17.804A7 7 0 0112 15a7 7 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
