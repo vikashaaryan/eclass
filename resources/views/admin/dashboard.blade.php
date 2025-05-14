@@ -16,7 +16,7 @@
                 <div class="grid grid-cols-3 gap-6">
                     <div class="border bg-red-500 text-white font-semibold text-xl flex flex-col p-8 rounded">
                         <span class="">
-                            20+
+                            {{$countStudent}}
                         </span>
                         <span class="">
                             Total Student
@@ -24,21 +24,21 @@
                     </div>
                     <div class="border bg-blue-500 text-white font-semibold text-xl flex flex-col p-8 rounded">
                         <span class="">
-                            20+
+                          {{$countCourse}}
                         </span>
                         <span class="">
                             Total Courses
                         </span>
                     </div> <div class="border bg-green-500 text-white font-semibold text-xl flex flex-col p-8 rounded">
                         <span class="">
-                            20+
+                           {{$countCategory}}
                         </span>
                         <span class="">
                             Total Category
                         </span>
                     </div> <div class="border bg-orange-500 text-white font-semibold text-xl flex flex-col p-8 rounded">
                         <span class="">
-                            20+
+                          {{$countAdmission}}
                         </span>
                         <span class="">
                             Total Admission

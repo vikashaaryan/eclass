@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Course;
 use App\Models\User;
 use Devrabiul\ToastMagic\Facades\ToastMagic;
 use Illuminate\Http\Request;
@@ -10,7 +12,12 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function dashboard(){
-        return view("admin.dashboard");
+        $countStudent = User::where ("status", true)->count();
+        $countAdmission = User::where("status", false)->count();
+        $countTotal = User::count();
+        $countCategory = Category::count();
+        $countCourse = Course::count();
+        return view("admin.dashboard", compact("countStudent", "countAdmission", "countTotal", "countCourse","countCategory"));
     }
     public function manageAdmission(){
         $admissions = User::where("status", false)->get();
